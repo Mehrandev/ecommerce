@@ -20,6 +20,10 @@ class ProductsController extends Controller
         $this->productRepository = $productRepository;
     }
 
+    /**
+     * @param Category $category
+     * @return ProductCollection
+     */
     public function getByCategory(Category $category)
     {
         return new ProductCollection($this->productRepository->findByCategory($category));

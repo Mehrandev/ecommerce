@@ -4,10 +4,8 @@
 namespace App\Http\Interfaces\Repositories;
 
 
-use Illuminate\Support\Collection;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 interface BaseRepositoryInterface
 {
-
-    public function all(): Collection;
 }
