@@ -15,7 +15,8 @@ use Illuminate\Support\Facades\Route;
 */
 Route::namespace('Api')->group(
     function () {
-        Route::get('category/{category}/products', 'ProductsController@getByCategory');
+        Route::get('categories', 'CategoriesController@index');
+        Route::get('categories/{category}/products', 'ProductsController@getByCategory');
     }
 );
 Route::middleware('auth:api')->get(
