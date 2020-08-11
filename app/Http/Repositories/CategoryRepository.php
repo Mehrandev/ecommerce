@@ -29,4 +29,13 @@ class CategoryRepository extends BaseRepository implements CategoryRepositoryInt
             ->whereNull('parent_id')
             ->paginate(config('custom.paginate.categories'));
     }
+
+    /**
+     * @param string $slug
+     * @return object|null
+     */
+    public function findBySlug(string $slug): ?object
+    {
+        return Category::where('slug', $slug)->first();
+    }
 }
