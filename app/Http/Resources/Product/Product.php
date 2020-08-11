@@ -17,11 +17,12 @@ class Product extends JsonResource
     {
         return [
             'id' => $this->id,
-            'price'=>number_format($this->price),
-            'description'=>$this->description,
-            'quantity'=>$this->quantity,
-            'image_url'=>$this->image_url,
-            'category'=> new Category($this->category)
+            'name' => $this->name,
+            'price' => number_format($this->price),
+            'description' => $this->description,
+            'quantity' => $this->quantity,
+            'image_url' => $this->image_url,
+            'category' => new Category($this->category)
         ];
     }
 }
