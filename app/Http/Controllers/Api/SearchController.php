@@ -5,9 +5,9 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Interfaces\Repositories\ProductRepositoryInterface;
 use App\Http\Resources\Product\ProductCollection;
-use App\Models\Category;
+use Illuminate\Http\Request;
 
-class ProductsController extends Controller
+class SearchController extends Controller
 {
 
     /**
@@ -21,11 +21,11 @@ class ProductsController extends Controller
     }
 
     /**
-     * @param Category $category
+     * @param Request $request
      * @return ProductCollection
      */
-    public function getByCategory(Category $category)
+    public function index(Request $request)
     {
-        return new ProductCollection($this->productRepository->findByCategory($category));
+        return new ProductCollection($this->productRepository->search($request->keyword));
     }
 }

@@ -13,5 +13,11 @@ interface ProductRepositoryInterface
      * @param Category $category
      * @return LengthAwarePaginator
      */
-  public function findByCategory(Category $category):LengthAwarePaginator;
+    public function findByCategory(Category $category): LengthAwarePaginator;
+
+    /**
+     * @param string $keyword
+     * @return LengthAwarePaginator
+     */
+    public function search(string $keyword): LengthAwarePaginator;
 }

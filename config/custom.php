@@ -2,6 +2,7 @@
 
 return [
     'paginate' => [
-        'products' => 25
+        'products' => 25,
+        'categories' => 25
     ]
 ];
