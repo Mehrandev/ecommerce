@@ -18,11 +18,8 @@ Route::namespace('Api')->group(
         Route::get('categories', 'CategoriesController@index');
         Route::get('categories/{category}/products', 'ProductsController@getByCategory');
         Route::get('search', 'SearchController@index');
-    }
-);
-Route::middleware('auth:api')->get(
-    '/user',
-    function (Request $request) {
-        return $request->user();
+        Route::post('auth/register', 'AuthController@store');
+        Route::post('auth/login', 'AuthController@login');
+        Route::middleware('auth:api')->post('products', 'ProductsController@store');
     }
 );
