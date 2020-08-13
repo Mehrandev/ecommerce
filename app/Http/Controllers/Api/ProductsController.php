@@ -42,6 +42,7 @@ class ProductsController extends Controller
 
     public function store(ProductExcelRequest $request)
     {
-        $result = Excel::import(new ProductsImport($this->categoryRepository), $request->excel);
+        Excel::import(new ProductsImport($this->categoryRepository), $request->excel);
+
     }
 }
